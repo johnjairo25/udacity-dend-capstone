@@ -3,6 +3,18 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# zip files
+*.zip
+
+# Data set folders
+datasets/
+
+# idea
+.idea/
+
+# Mac specific files
+.DS_Store
+
 # C extensions
 *.so
 
