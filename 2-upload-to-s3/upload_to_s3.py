@@ -21,6 +21,7 @@ def move_pre_processed_files_to_s3():
                         )
 
     s3.meta.client.upload_file('../datasets/results/Country.csv', BUCKET, 'Country.csv')
+    s3.meta.client.upload_file('../datasets/results/Indicators.csv', BUCKET, 'Indicators.csv')
     s3.meta.client.upload_file('../datasets/results/GlobalLandTemperaturesByCity.csv', BUCKET,
                                'GlobalLandTemperaturesByCity.csv')
     s3.meta.client.upload_file('../datasets/results/GlobalLandTemperaturesByCountry.csv', BUCKET,
