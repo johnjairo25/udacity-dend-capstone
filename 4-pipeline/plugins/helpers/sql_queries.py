@@ -205,17 +205,17 @@ class SqlQueries:
     insert_fact_indicators_with_happiness = ("""
         select co.country_code, 'Happiness Score', 'HAP.SCORE', hap.happiness_score, hap.year
         from staging_world_happiness hap
-            join dim_country co on (hap.country = co.country_code)
+            join dim_country co on (hap.country = co.short_name)
         where hap.year is not null and hap.happiness_score is not null
     """)
 
     insert_fact_indicators_with_suicides = ("""
         select co.country_code,
-             'Suicides 100k ' || rates.sex || rates.age_range as indicator_name,
+             'Suicides 100k ' || rates.sex || ' ' ||  rates.age_range as indicator_name,
              'SUICIDE.100K' as indicator_code,
              rates.suicides_100k as value,
              rates.year
         from staging_suicide_rates rates
-            join dim_country co on (rates.country = co.country_code)
+            join dim_country co on (rates.country = co.short_name)
         where rates.year is not null and rates.suicides_100k is not null
     """)
