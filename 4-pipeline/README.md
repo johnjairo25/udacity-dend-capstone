@@ -8,7 +8,7 @@ sections:
 3. Airflow Configuration (Redshift, S3 Credentials)
 4. Pipeline Implementation
 
-## Schema Design
+## Schema Design
 
 At this moment, we have the following files in our S3 bucket:
 
